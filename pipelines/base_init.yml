@@ -154,7 +154,7 @@ pipelines:
         - curl -fL https://getcli.jfrog.io | sh
         - sudo apt-get install -y jq
         - cp jfrog  `which jfrog`
-        - retry_command jfrog rt config --url $int_Artifactory_url --user
+        - retry_command jfrog config add --artifactory-url $int_Artifactory_url --user
           $int_Artifactory_user --apikey $int_Artifactory_apikey
           --interactive=false
         - "cd ${res_demo_gitRepo_resourcePath}"
